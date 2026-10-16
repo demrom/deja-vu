@@ -26,13 +26,14 @@ func init() { setTheme("dark") }
 // palettes holds each theme's colours in the order setTheme assigns them.
 // dark and light are Catppuccin Mocha and Latte. dracula takes Dracula's
 // colours and its editor ports' background shades, with comment for muted
-// text; the card surface and faint text sit between them at Mocha's contrast.
+// text; the card surface and faint text sit between them at Mocha's contrast,
+// far enough apart that each keeps its own xterm-256 entry.
 var palettes = map[string][]string{
 	"dark": {"#1e1e2e", "#181825", "#26263a", "#313244", "#45475a", "#cdd6f4", "#a6adc8", "#7f849c", "#585b70",
 		"#cba6f7", "#f9e2af", "#a6e3a1", "#fab387", "#f38ba8", "#f9e2af"},
 	"light": {"#eff1f5", "#e6e9ef", "#e4e6ee", "#dce0e8", "#bcc0cc", "#4c4f69", "#5c5f77", "#7c7f93", "#9ca0b0",
 		"#8839ef", "#df8e1d", "#40a02b", "#fe640b", "#d20f39", "#fe640b"},
-	"dracula": {"#282a36", "#21222c", "#2e303e", "#343746", "#44475a", "#f8f8f2", "#bfc3d9", "#6272a4", "#5a5e7e",
+	"dracula": {"#282a36", "#21222c", "#313342", "#3a3d4e", "#44475a", "#f8f8f2", "#bfc3d9", "#6272a4", "#5a5e7e",
 		"#bd93f9", "#f1fa8c", "#50fa7b", "#ffb86c", "#ff5555", "#f1fa8c"},
 }
 

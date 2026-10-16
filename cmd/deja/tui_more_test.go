@@ -259,3 +259,16 @@ func TestTUIContinueRecentAndFold(t *testing.T) {
 		t.Errorf("the newest pick leads and is selected: %+v", ts[0])
 	}
 }
+
+// Without truecolor every colour rounds to the xterm-256 cube; two surfaces
+// that land on one entry make the selected card and the panels vanish.
+func TestThemeSurfacesStayApartIn256Colours(t *testing.T) {
+	for name, p := range palettes {
+		base := tui.To256(tui.Hex(p[0]))
+		for _, hex := range p[2:4] { // the card surface and the panels
+			if n := tui.To256(tui.Hex(hex)); n == base {
+				t.Errorf("%s: %s lands on the background's xterm %d", name, hex, n)
+			}
+		}
+	}
+}
